@@ -1,0 +1,16 @@
+---
+description: Redact sensitive information from screenshots before sharing externally
+alwaysApply: false
+globs: "**/*"
+---
+
+Before sharing or exporting screenshots that may contain sensitive data, use `superbased_redact`:
+
+- `secrets: true` (default) — redacts API keys, tokens, passwords, connection strings
+- `pii: true` — redacts emails, phone numbers, names, addresses
+
+Always redact when:
+- Screenshots show terminal output with environment variables
+- Screenshots show browser sessions with logged-in accounts
+- Screenshots show settings, config files, or dashboards
+- Screenshots will be shared externally or included in bug reports

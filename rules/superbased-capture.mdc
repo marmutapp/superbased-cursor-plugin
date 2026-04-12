@@ -1,0 +1,13 @@
+---
+description: Use SuperBased to capture and analyze the screen when visual context is needed
+alwaysApply: false
+---
+
+When you need to see the user's screen, verify a UI change, debug a visual issue, or read on-screen content, use SuperBased MCP tools:
+
+- **See the screen:** `superbased_capture_image` with `resolution: "half"` (saves 4x tokens vs full)
+- **Target a window:** First `superbased_window_list`, then `superbased_capture_image` with `window: "name"`
+- **Read text from screen:** `superbased_ocr` for local OCR, or `superbased_ai instruction="/extract"` for AI-powered extraction
+- **Read clipboard image:** `superbased_clipboard` with `action: "readImage"`
+
+Resolution guide: `quarter` for layout checks, `half` for general use, `high` for small text, `full` for pixel-perfect comparisons.

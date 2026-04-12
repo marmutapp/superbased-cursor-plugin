@@ -1,0 +1,18 @@
+---
+description: Use SuperBased smart recording for visual regression testing and screen monitoring
+alwaysApply: false
+---
+
+SuperBased provides 4 recording modes via `superbased_recording`:
+
+- **smart** (recommended): Captures at interval, only saves frames when screen visually changes. Efficient — no redundant frames.
+- **monitor**: Like smart, but AI analyzes frames and flags errors, warnings, or unexpected states. Use during deploys and test runs.
+- **periodic**: Captures every N seconds regardless of changes. Simple time-lapse.
+- **interaction**: Desktop only — captures on clicks, keystrokes, scrolls.
+
+Visual regression testing workflow:
+1. Record baseline: `action: "start"`, `mode: "smart"`, `profile: "automated_test"`
+2. Walk through UI flow, `action: "capture"` at each step
+3. `action: "stop"`, save as baseline with `superbased_baseline`
+4. After changes, repeat the flow in a new session
+5. Compare with `superbased_diff`

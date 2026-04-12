@@ -1,0 +1,39 @@
+{
+  "name": "superbased-tools",
+  "owner": {
+    "name": "Gaja AI",
+    "email": "contact@marmut.app"
+  },
+  "metadata": {
+    "description": "Screenshot capture, AI vision, OCR, screen recording, visual regression testing, token compression, voice dictation, and proactive screen monitoring"
+  },
+  "plugins": [
+    {
+      "name": "superbased",
+      "source": "./",
+      "description": "Give Cursor eyes on your screen — capture, record, OCR, AI vision, visual QA, voice dictation, token compression, and proactive monitoring via 28 MCP tools",
+      "version": "2.0.0",
+      "author": {
+        "name": "Gaja AI",
+        "email": "contact@marmut.app"
+      },
+      "homepage": "https://superbased.app",
+      "repository": "https://github.com/marmutapp/superbased-cursor-plugin",
+      "license": "MIT",
+      "category": "development",
+      "tags": [
+        "screenshot",
+        "capture",
+        "screen-recording",
+        "ocr",
+        "visual-testing",
+        "token-compression",
+        "dictation",
+        "monitor",
+        "ai-vision",
+        "mcp"
+      ],
+      "logo": "assets/logo.svg"
+    }
+  ]
+}
