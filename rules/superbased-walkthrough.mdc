@@ -1,0 +1,30 @@
+---
+description: Walk through a scrollable section (settings panel, long list) and report what's there
+alwaysApply: false
+---
+
+When the user asks you to **walk through** a scrollable section — "what's in Settings", "show me the whole page", "walk me through X", "capture the whole sidebar" — use `superbased_scroll_capture`. It returns N viewport frames inline under ONE approval instead of chaining `superbased_scroll` + screenshot calls (which cost one approval per step).
+
+**Invocation:**
+```
+superbased_scroll_capture anchorX=<x> anchorY=<y> processName="<app>" maxPages=8 confirm=true
+```
+
+**Get the anchor:** first run `superbased_ui_dump processName="<app>"` and pick a `textElement` whose `center.{x,y}` sits inside the scrollable container (not sidebar / header). Pass those coords as `anchorX` / `anchorY`.
+
+**Response gives you:** N image blocks (one per captured viewport) + `framesCaptured`, `pagesScrolled`, `atEnd`, `atEndReason`, per-frame `scrolledPx`, calibration diagnostic.
+
+**Don't do this:**
+```
+superbased_scroll amount=1 unit=page ...    # approval #1
+superbased_screenshot ...                    # approval #2
+superbased_scroll amount=1 unit=page ...    # approval #3
+...
+```
+
+**Do this:**
+```
+superbased_scroll_capture anchor=... ...    # approval #1; N frames back
+```
+
+Windows only today (Win32 `mouse_event` + PrintWindow). Cross-platform coming later.

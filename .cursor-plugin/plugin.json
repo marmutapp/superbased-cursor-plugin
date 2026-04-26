@@ -1,7 +1,7 @@
 {
   "name": "superbased",
-  "version": "2.0.0",
-  "description": "Screenshot capture, AI vision, OCR, screen recording, visual regression testing, token compression, voice dictation, and proactive screen monitoring via 28 MCP tools",
+  "version": "2.0.2",
+  "description": "Screenshot capture, AI vision, OCR, screen recording, visual regression testing, token compression, voice dictation, full GUI automation with humanization v2, and proactive screen monitoring via 72 MCP tools",
   "author": {
     "name": "Gaja AI",
     "email": "contact@marmut.app"
@@ -19,6 +19,11 @@
     "dictation",
     "monitor",
     "ai-vision",
+    "gui-automation",
+    "click-automation",
+    "form-fill",
+    "captcha",
+    "humanization",
     "mcp"
   ],
   "logo": "assets/logo.svg"
